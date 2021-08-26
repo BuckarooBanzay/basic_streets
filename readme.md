@@ -15,6 +15,7 @@ Optional mods:
 * `moreblocks`: registers all nodes to the circular saw if available
 * `default`: for the sounds
 * `dye`: for the recipes
+* `unifieddyes`: makes the non-circular-saw nodes colorable
 * `building_blocks`: uses the `building_blocks:Tar` node if available (otherwise registers its own base-variant)
 
 # License
