@@ -11,6 +11,6 @@ read_globals = {
 	"dump",
 
 	-- optional deps
-	"stairsplus", "default", "unifieddyes"
+	"stairsplus", "default", "unifieddyes", "player_monoids"
 
 }

@@ -17,6 +17,7 @@ Optional mods:
 * `dye`: for the recipes
 * `unifieddyes`: makes the non-circular-saw nodes colorable
 * `building_blocks`: uses the `building_blocks:Tar` node if available (otherwise registers its own base-variant)
+* `player_monoids`: increases the players running speed on tar nodes
 
 # License
 

@@ -38,7 +38,11 @@ for name, def in pairs(nodes) do
 		tiles = {{ name = "basic_streets_tar.png", color = "white" }},
 		overlay_tiles = {{ name = def.overlay }},
 		paramtype2 = "colorwallmounted",
-		groups = {crumbly=1, tar_block = 1},
+		groups = {
+            crumbly=1,
+            tar_block = 1,
+            fast_travel = 1
+        },
 		sounds = sounds
 	}
 
@@ -72,7 +76,11 @@ if not has_building_blocks_mod then
 	minetest.register_node(base_tar_nodename, {
 		description = "Tar",
 		tiles = {"basic_streets_tar.png"},
-		groups = {crumbly=1, tar_block = 1},
+		groups = {
+            crumbly = 1,
+            tar_block = 1,
+            fast_travel = 1
+        },
 		sounds = sounds
 	})
 
@@ -81,7 +89,11 @@ if not has_building_blocks_mod then
 		stairsplus:register_all("basic_streets", "tar", base_tar_nodename, {
 			description = "Tar",
 			tiles = {"basic_streets_tar.png"},
-			groups = {crumbly=1, tar_block = 1},
+			groups = {
+                crumbly = 1,
+                tar_block = 1,
+                fast_travel = 1
+            },
 			sounds = sounds
 		})
 	end
@@ -96,6 +108,15 @@ if not has_building_blocks_mod then
 			}
 		})
 	end
+else
+    -- override groups from existing tar-block
+    minetest.override_item("base_tar_nodename", {
+        groups = {
+            crumbly = 1,
+            tar_block = 1,
+            fast_travel = 1
+        }
+    })
 end
 
 if has_dye_mod then
