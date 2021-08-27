@@ -110,7 +110,7 @@ if not has_building_blocks_mod then
 	end
 else
     -- override groups from existing tar-block
-    minetest.override_item("base_tar_nodename", {
+    minetest.override_item(base_tar_nodename, {
         groups = {
             crumbly = 1,
             tar_block = 1,
