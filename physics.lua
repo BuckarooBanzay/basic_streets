@@ -52,4 +52,4 @@ local function check_players()
     minetest.after(1, check_players)
 end
 
-check_players()
+minetest.after(1, check_players)
