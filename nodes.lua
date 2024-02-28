@@ -39,10 +39,11 @@ for name, def in pairs(nodes) do
 		overlay_tiles = {{ name = def.overlay }},
 		paramtype2 = "colorwallmounted",
 		groups = {
-            crumbly=1,
-            tar_block = 1,
-            fast_travel = 1
-        },
+			crumbly=1,
+			tar_block = 1,
+			fast_travel = 1
+		},
+		is_ground_content = false,
 		sounds = sounds
 	}
 
@@ -77,10 +78,11 @@ if not has_building_blocks_mod then
 		description = "Tar",
 		tiles = {"basic_streets_tar.png"},
 		groups = {
-            crumbly = 1,
-            tar_block = 1,
-            fast_travel = 1
-        },
+			crumbly = 1,
+			tar_block = 1,
+			fast_travel = 1
+		},
+		is_ground_content = false,
 		sounds = sounds
 	})
 
@@ -90,10 +92,10 @@ if not has_building_blocks_mod then
 			description = "Tar",
 			tiles = {"basic_streets_tar.png"},
 			groups = {
-                crumbly = 1,
-                tar_block = 1,
-                fast_travel = 1
-            },
+				crumbly = 1,
+				tar_block = 1,
+				fast_travel = 1
+			},
 			sounds = sounds
 		})
 	end
@@ -109,14 +111,14 @@ if not has_building_blocks_mod then
 		})
 	end
 else
-    -- override groups from existing tar-block
-    minetest.override_item(base_tar_nodename, {
-        groups = {
-            crumbly = 1,
-            tar_block = 1,
-            fast_travel = 1
-        }
-    })
+	-- override groups from existing tar-block
+	minetest.override_item(base_tar_nodename, {
+			groups = {
+			crumbly = 1,
+			tar_block = 1,
+			fast_travel = 1
+		}
+	})
 end
 
 if has_dye_mod then
