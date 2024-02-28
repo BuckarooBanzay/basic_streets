@@ -113,7 +113,7 @@ if not has_building_blocks_mod then
 else
 	-- override groups from existing tar-block
 	minetest.override_item(base_tar_nodename, {
-			groups = {
+		groups = {
 			crumbly = 1,
 			tar_block = 1,
 			fast_travel = 1
