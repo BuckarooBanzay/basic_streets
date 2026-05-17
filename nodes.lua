@@ -51,7 +51,8 @@ for name, def in pairs(nodes) do
 		nodedef.palette = "unifieddyes_palette_colorwallmounted.png"
 		nodedef.groups.ud_param2_colorable = 1
 		nodedef.on_construct = unifieddyes.on_construct
-		nodedef.on_dig = unifieddyes.on_dig
+		nodedef.on_dig = not unifieddyes.preserve_metadata and unifieddyes.on_dig or nil
+		nodedef.preserve_metadata = unifieddyes.preserve_metadata
 	end
 
 	core.register_node("basic_streets:" .. name, nodedef)
