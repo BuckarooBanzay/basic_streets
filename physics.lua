@@ -2,15 +2,15 @@ local monoid_id = "basic_streets_speed_boost"
 
 local function has_boost(player)
     local playername = player:get_player_name()
-    local privs = minetest.get_player_privs(playername)
+    local privs = core.get_player_privs(playername)
     if privs.fly then
         return
     end
 
     local ppos = player:get_pos()
     local pos_below = vector.subtract(ppos, {x=0, y=1, z=0})
-    local node = minetest.get_node(pos_below)
-    local ndef = minetest.registered_nodes[node.name]
+    local node = core.get_node(pos_below)
+    local ndef = core.registered_nodes[node.name]
     if not ndef then
         return
     end
@@ -40,16 +40,16 @@ local function check_player(player)
 end
 
 -- clear leaving players' state
-minetest.register_on_leaveplayer(function(player)
+core.register_on_leaveplayer(function(player)
     state[player:get_player_name()] = nil
 end)
 
 -- periodical check function
 local function check_players()
-    for _, player in ipairs(minetest.get_connected_players()) do
+    for _, player in ipairs(core.get_connected_players()) do
         check_player(player)
     end
-    minetest.after(1, check_players)
+    core.after(1, check_players)
 end
 
-minetest.after(1, check_players)
+core.after(1, check_players)
